@@ -56,21 +56,21 @@ public class TestPersonaje {
 	@Test
 	public void testRenegado(){
 		Renegado r1 = new Renegado("Martin", new Colt(), 1, 1);
-		Assert.assertTrue(r1.getSalud() == 6);
+		Assert.assertTrue(r1.getSalud() == 9);
 		Assert.assertTrue(r1.getTipoPersonaje() == "Renegado");
 		Assert.assertTrue(r1.getArma().getTipoArma() == "Colt");
 		Assert.assertTrue(r1.getArma().getAlcance() == 10);
 		
 		
 		Renegado r2 = new Renegado("Diego", new Derringer(), 1, 2);
-		Assert.assertTrue(r2.getSalud() == 6);
+		Assert.assertTrue(r2.getSalud() == 9);
 		Assert.assertTrue(r2.getTipoPersonaje() == "Renegado");
 		Assert.assertTrue(r2.getArma().getTipoArma() == "Derringer");
 		Assert.assertTrue(r2.getArma().getAlcance() == 1.5);
 		
 		
 		Renegado r3 = new Renegado("Ruperto", new Winchester(), 1, 3);
-		Assert.assertTrue(r3.getSalud() == 6);
+		Assert.assertTrue(r3.getSalud() == 9);
 		Assert.assertTrue(r3.getTipoPersonaje() == "Renegado");
 		Assert.assertTrue(r3.getArma().getTipoArma() == "Winchester");
 		Assert.assertTrue(r3.getArma().getAlcance() == 4);

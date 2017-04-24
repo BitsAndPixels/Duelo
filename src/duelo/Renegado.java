@@ -4,6 +4,6 @@ public class Renegado extends Personaje {
 	public Renegado(String nombre,Arma arma,int posX,int posY){
 		super(nombre,arma,posX,posY);
 		this.salud=9;
-		this.nombre="Renegado";
+		this.tipoPersonaje="Renegado";
 	}
 }

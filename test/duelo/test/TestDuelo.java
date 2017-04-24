@@ -51,7 +51,11 @@ public class TestDuelo {
 			
 			ruperto.duelo(norris);
 			
-			if (!eastwood.estaVivo() || !norris.estaVivo() || !ruperto.estaVivo())
+			if (!eastwood.estaVivo())
+				sobreviviente--;
+			if (!norris.estaVivo())
+				sobreviviente--;
+			if (!ruperto.estaVivo())
 				sobreviviente--;
 				
 		}

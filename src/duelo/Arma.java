@@ -1,14 +1,17 @@
 package duelo;
 
-public class Arma {
+public abstract class Arma {
 	protected String tipoArma;
 	protected int cantTiros;
 	protected int cargador;
 	protected int danio;
 	protected double alcance;
 	protected int durabilidad;
+	
 
-	public Arma(){}
+	public Arma(){
+		
+	}
 	
 	public String getTipoArma() {
 		return tipoArma;
@@ -57,7 +60,10 @@ public class Arma {
 	public void setDurabilidad(int durabilidad) {
 		this.durabilidad = durabilidad;
 	}
-
+	
+	public void desgaste(){
+		this.setDurabilidad(this.getDurabilidad()-1);
+	}
 
 	public boolean armaRota(){
 		if(this.getDurabilidad()!=0)
@@ -65,11 +71,18 @@ public class Arma {
 		return true;
 	}
 
+	public void recarga(){
+		this.setCantTiros(this.getCargador());
+		this.desgaste();
+	}
+	
 	public boolean tiro(){
-		if(this.getCantTiros()==0)
+		if (this.getCantTiros()==0)
+			this.recarga();// Semiautomatica...ponele
+		if (this.armaRota())
 			return false;
 		this.setCantTiros(this.getCantTiros()-1);
-		return true;
-		
+		return true;	
 	}
+	
 }

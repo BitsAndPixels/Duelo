@@ -82,13 +82,12 @@ public class Personaje {
 		if (this.getArma().getAlcance() > distancia)
 			atacado.setSalud(atacado.getSalud()-this.getArma().danio);
 		
-		//decremento bala
 		return true;
 	}
 	
-	public void recarga(){
+	public void recargar(){
 		if (this.tengoArma())
-			this.getArma().setCantTiros(this.getArma().getCargador());
+			this.getArma().recarga();
 	}
 
 	public boolean tengoArma(){
@@ -96,18 +95,9 @@ public class Personaje {
 	}
 	
 	public void duelo(Personaje atacado){
-		int cantidadRecargas=0;
-		
-		if (!this.dispara(atacado)){
-			this.recarga();
-			cantidadRecargas++;
-			if (!(this.getArma() instanceof Winchester))
-				this.dispara(atacado);
-		}
-		
-		if (cantidadRecargas>=1)
-			this.getArma().setDurabilidad(this.getArma().getDurabilidad()-1);
-		
+		if (this.tengoArma())
+			if (!this.dispara(atacado))
+				this.recargar();
 	}
 
 }

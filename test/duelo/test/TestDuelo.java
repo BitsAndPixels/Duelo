@@ -14,8 +14,7 @@ public class TestDuelo {
 			Renegado ruperto = new Renegado("Ruperto", new Derringer(), 1,3);
 			
 			// se arma la balacera mientras esten vivos o ambas armas no se rompan
-			while (martin.estaVivo() && ruperto.estaVivo() 
-					&& (martin.tengoArma() || ruperto.tengoArma())){
+			while (martin.estaVivo() && ruperto.estaVivo()){
 				
 				martin.duelo(ruperto);
 				ruperto.duelo(martin);
@@ -36,9 +35,8 @@ public class TestDuelo {
 		
 		int sobreviviente = 3;
 		// se arma la balacera mientras esten vivos o las armas no se rompan	
-		//while (eastwood.estaVivo() && norris.estaVivo() && ruperto.estaVivo()
-		while (sobreviviente > 1 && (eastwood.tengoArma() || norris.tengoArma() || ruperto.tengoArma())){
-			
+		while (sobreviviente > 1){
+		
 			eastwood.duelo(ruperto);
 			
 			ruperto.duelo(eastwood);

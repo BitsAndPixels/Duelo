@@ -4,6 +4,7 @@ public class Derringer extends Arma{
 	
 	
 	public Derringer(){
+		super();
 		this.cargador=2;
 		this.cantTiros=this.cargador;
 		this.danio=1;
@@ -11,5 +12,5 @@ public class Derringer extends Arma{
 		this.durabilidad=7;
 		this.tipoArma="Derringer";
 	}
-
+	
 }

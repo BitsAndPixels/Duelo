@@ -3,6 +3,7 @@ package duelo;
 public class Colt extends Arma{
 	
 	public Colt(){
+		super();
 		this.cargador=6;
 		this.cantTiros=this.cargador;
 		this.danio=2;
@@ -11,12 +12,5 @@ public class Colt extends Arma{
 		this.tipoArma="Colt";
 	}
 	
-	public boolean tiro(){
-		if(this.armaRota() || this.getCantTiros()==0)
-			return false;
-		this.setCantTiros(this.getCantTiros()-1);
-		return true;
-		
-	}
 
 }
